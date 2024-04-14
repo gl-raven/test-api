@@ -25,7 +25,7 @@ class Router
     public function __construct(?string $url = null)
     {
         if (is_null($url)) {
-            $parts = parse_url($_SERVER['REQUEST_URI']);
+            $parts = parse_url($_SERVER['REQUEST_URI'] ?? '/');
             $url = $parts['path'];
         }
 
